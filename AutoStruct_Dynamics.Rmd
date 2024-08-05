@@ -9,6 +9,8 @@ output: github_document
 library(highcharter)
 library(dplyr)
 library(data.table)
+library(webshot2)
+library(htmlwidgets)
 ```
 
 ```{r}
@@ -100,7 +102,7 @@ Datalabel <- JS(
 )
 
 
-highchart() %>%
+hc <- highchart() %>%
   
   hc_chart(inverted = TRUE,
            backgroundColor = "#343A40"
@@ -156,5 +158,11 @@ highchart() %>%
     className = NULL,
     formatter = Tooltip
   )
+
+  # Save the widget as an HTML file
+  saveWidget(hc, "plot.html", selfcontained = FALSE)
+
+  # Use webshot to convert it to an image
+  webshot2::webshot("plot.html", "plot.png", delay = 5)
 ```
 

@@ -79,6 +79,11 @@ library(data.table)
     ##     between, first, last
 
 ``` r
+library(webshot2)
+library(htmlwidgets)
+```
+
+``` r
 XY <- c(24015319, 480442671, 57765129, 6772172, 9401538, 57940350)
 MN <- c(17945543, 300517552, 31052000, 2798460, 8626025, 1894563)
 
@@ -167,7 +172,7 @@ Datalabel <- JS(
 )
 
 
-highchart() %>%
+hc <- highchart() %>%
   
   hc_chart(inverted = TRUE,
            backgroundColor = "#343A40"
@@ -223,9 +228,12 @@ highchart() %>%
     className = NULL,
     formatter = Tooltip
   )
+
+  # Save the widget as an HTML file
+  saveWidget(hc, "plot.html", selfcontained = FALSE)
+
+  # Use webshot to convert it to an image
+  webshot2::webshot("plot.html", "plot.png", delay = 5)
 ```
 
-    ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
-
 ![](AutoStruct_Dynamics_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
-

@@ -3,7 +3,7 @@
     "path": "~/Documents/SP/AutoStruct_Dynamics/AutoStruct_Dynamics.Rmd",
     "project_path": "AutoStruct_Dynamics.Rmd",
     "type": "r_markdown",
-    "hash": "15899327",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1722884011390.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "161,2",
-        "scrollLine": "127"
+        "cursorPosition": "159,3",
+        "scrollLine": "146"
     },
     "folds": "",
-    "lastKnownWriteTime": 1722884041,
+    "lastKnownWriteTime": 1722885937,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1722884156244,
+    "last_content_update": 1722885937414,
     "read_only": false,
     "read_only_alternatives": []
 }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<link href="plot_files/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="plot_files/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="plot_files/jquery-3.5.1/jquery.min.js"></script>
+<script src="plot_files/proj4js-2.3.15/proj4.js"></script>
+<link href="plot_files/highcharts-9.3.1/css/motion.css" rel="stylesheet" />
+<script src="plot_files/highcharts-9.3.1/highcharts.js"></script>
+<script src="plot_files/highcharts-9.3.1/highcharts-3d.js"></script>
+<script src="plot_files/highcharts-9.3.1/highcharts-more.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/stock.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/map.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/data.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/exporting.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/offline-exporting.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/drilldown.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/item-series.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/overlapping-datalabels.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/annotations.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/export-data.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/funnel.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/heatmap.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/treemap.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/sankey.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/dependency-wheel.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/organization.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/solid-gauge.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/streamgraph.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/sunburst.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/vector.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/wordcloud.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/xrange.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/tilemap.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/venn.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/gantt.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/timeline.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/parallel-coordinates.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/bullet.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/coloraxis.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/dumbbell.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/lollipop.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/series-label.js"></script>
+<script src="plot_files/highcharts-9.3.1/plugins/motion.js"></script>
+<script src="plot_files/highcharts-9.3.1/custom/reset.js"></script>
+<script src="plot_files/highcharts-9.3.1/modules/boost.js"></script>
+<script src="plot_files/highchart-binding-0.9.4/highchart.js"></script>
+  <title>highchart</title>
+</head>
+<body>
+<div id="htmlwidget_container">
+  <div class="highchart html-widget html-fill-item" id="htmlwidget-7d7b5b8d38c3fde7e07d" style="width:100%;height:500px;"></div>
+</div>
+<script type="application/json" data-for="htmlwidget-7d7b5b8d38c3fde7e07d">{"x":{"hc_opts":{"chart":{"reflow":true,"inverted":true,"backgroundColor":"#343A40"},"title":{"text":null},"yAxis":{"title":{"text":null}},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"},"organization":{"linkColor":"#f8f9fa","nodeWidth":70,"height":70}},"series":[{"data":[{"from":"CAR","to":"German"},{"from":"CAR","to":"America"},{"from":"German","to":"AUDI"},{"from":"German","to":"BMW"},{"from":"German","to":"Opel"},{"from":"America","to":"RAM"},{"from":"America","to":"GMC"},{"from":"America","to":"Jeep"}],"type":"organization","colorByPoint":false,"color":{"linearGradient":{"x1":0,"y1":0,"x2":1,"y2":0},"stops":[["0","#6F201A"],["1","#FFC3B3"]]},"dataLabels":{"enabled":true,"useHTML":true,"style":{"color":"#f8f9fa","fontSize":"12px","fontWeight":"bold","textOutline":false},"nodeFormatter":"function() {\n      let total_xy = 0;\n      let total_mn = 0;\n      if (this.point.id === 'German') {\n        ['AUDI', 'BMW', 'Opel'].forEach(function(id) {\n          let node = this.series.nodes.find(node => node.id === id);\n          if (node) {\n            total_xy += node.xy;\n            total_mn += node.mn;\n          }\n        }, this);\n        return this.point.name + '<br>Ist: ' + Highcharts.numberFormat(total_xy/1000000, 2, ',', '.') + ' Mio.<br>Δ: ' + Highcharts.numberFormat(total_mn/1000000, 2, ',', '.') + ' Mio.';\n      } else if (this.point.id === 'America') {\n        ['RAM', 'GMC', 'Jeep'].forEach(function(id) {\n          let node = this.series.nodes.find(node => node.id === id);\n          if (node) {\n            total_xy += node.xy;\n            total_mn += node.mn;\n          }\n        }, this);\n        return this.point.name + '<br>Ist: ' + Highcharts.numberFormat(total_xy/1000000, 2, ',', '.') + ' Mio.<br>Δ: ' + Highcharts.numberFormat(total_mn/1000000, 2, ',', '.') + ' Mio.';\n      } else if (this.point.id === 'AUDI' || this.point.id === 'BMW' || this.point.id === 'Opel' || this.point.id === 'RAM' || this.point.id === 'GMC' || this.point.id === 'Jeep') {\n        return this.point.name + '<br>Ist: ' + Highcharts.numberFormat(this.point.xy/1000000, 2, ',', '.') + ' Mio.<br>Δ: ' + Highcharts.numberFormat(this.point.mn/1000000, 2, ',', '.') + ' Mio.';\n      } else if (this.point.id === 'CAR') {\n        ['AUDI', 'BMW', 'Opel', 'RAM', 'GMC', 'Jeep'].forEach(function(id) {\n          let node = this.series.nodes.find(node => node.id === id);\n          if (node) {\n            total_xy += node.xy;\n            total_mn += node.mn;\n          }\n        }, this);\n        return this.point.name + '<br>Ist: ' + Highcharts.numberFormat(total_xy/1000000, 2, ',', '.') + ' Mio.<br>Δ: ' + Highcharts.numberFormat(total_mn/1000000, 2, ',', '.') + ' Mio.';\n      } else {\n        return this.point.name;\n      }\n    }"},"nodes":[{"id":"AUDI","xy":24015319,"mn":17945543},{"id":"RAM","xy":480442671,"mn":300517552},{"id":"BMW","xy":57765129,"mn":31052000},{"id":"GMC","xy":6772172,"mn":2798460},{"id":"Opel","xy":9401538,"mn":8626025},{"id":"Jeep","xy":57940350,"mn":1894563},{"id":"CAR"},{"id":"German"},{"id":"America"}]}],"tooltip":{"enabled":true,"useHTML":true,"className":null,"formatter":"function() {\n      let total_xy = 0;\n      let total_mn = 0;\n      if (this.point.id === 'German') {\n        ['AUDI', 'BMW', 'Opel'].forEach(function(id) {\n          let node = this.series.nodes.find(node => node.id === id);\n          if (node) {\n            total_xy += node.xy;\n            total_mn += node.mn;\n          }\n        }, this);\n        return this.point.name + '<br>Total: ' + total_xy.toLocaleString('de-DE') + '<br>Change: ' + total_mn.toLocaleString('de-DE');\n      } else if (this.point.id === 'America') {\n        ['RAM', 'GMC', 'Jeep'].forEach(function(id) {\n          let node = this.series.nodes.find(node => node.id === id);\n          if (node) {\n            total_xy += node.xy;\n            total_mn += node.mn;\n          }\n        }, this);\n        return this.point.name + '<br>Total: ' + total_xy.toLocaleString('de-DE') + '<br>Change: ' + total_mn.toLocaleString('de-DE');\n      } else if (this.point.id === 'AUDI' || this.point.id === 'BMW' || this.point.id === 'Opel' || this.point.id === 'RAM' || this.point.id === 'GMC' || this.point.id === 'Jeep') {\n        return this.point.name + '<br>Total: ' + this.point.xy.toLocaleString('de-DE') + '<br>Change: ' + this.point.mn.toLocaleString('de-DE');\n      } else if (this.point.id === 'CAR') {\n        ['AUDI', 'BMW', 'Opel', 'RAM', 'GMC', 'Jeep'].forEach(function(id) {\n          let node = this.series.nodes.find(node => node.id === id);\n          if (node) {\n            total_xy += node.xy;\n            total_mn += node.mn;\n          }\n        }, this);\n        return this.point.name + '<br>Total: ' + total_xy.toLocaleString('de-DE') + '<br>Change: ' + total_mn.toLocaleString('de-DE');\n      } else {\n        return this.point.name;\n      }\n    }"}},"theme":{"chart":{"backgroundColor":"transparent"},"colors":["#7cb5ec","#434348","#90ed7d","#f7a35c","#8085e9","#f15c80","#e4d354","#2b908f","#f45b5b","#91e8e1"]},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":["hc_opts.series.0.dataLabels.nodeFormatter","hc_opts.tooltip.formatter"],"jsHooks":[]}</script>
+<script type="application/htmlwidget-sizing" data-for="htmlwidget-7d7b5b8d38c3fde7e07d">{"viewer":{"width":"100%","height":350,"padding":0,"fill":true},"browser":{"width":"100%","height":500,"padding":0,"fill":true}}</script>
+</body>
+</html>
