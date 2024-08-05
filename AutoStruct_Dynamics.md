@@ -9,10 +9,6 @@ library(highcharter)
     ##   method            from
     ##   as.zoo.data.frame zoo
 
-    ## Highcharts (www.highcharts.com) is a Highsoft software product which is
-
-    ## not free for commercial and Governmental use
-
 ``` r
 library(dplyr)
 ```
@@ -142,13 +138,15 @@ hc <- highchart() %>%
   ## The plotOptions is a wrapper object for the configuration of objects for each series type
   hc_plotOptions(organization = list(
     linkColor = "#f8f9fa",
-    nodeWidth = 70,
-    height = 70
+    nodeWidth = 50,
+    height = 60
+    # linkLength = 20
   )) %>%
   
   hc_add_series(data = dt,
                 type = "organization",
                 colorByPoint = FALSE,
+                linkLength = 20,
                 color = list(
                   linearGradient = list(x1 = 0, y1 = 0, x2 = 1, y2 = 0),
                   stops = list(
